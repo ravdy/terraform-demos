@@ -6,23 +6,19 @@ A **data source** allows Terraform to **query information** that can be used els
 
 ## ✅ Common Use Cases
 
-### 1. Referencing Existing Infrastructure
+#### 1. Referencing Existing Infrastructure
 
 Example:
 You have a VPC or subnet created outside Terraform (manually or by another team), and you want to deploy a new EC2 instance inside it.
 
 ➡️ Use a data source to fetch the subnet ID.
 
----
-
-### 2. Fetching Outputs from Another Terraform Workspace/Module
+#### 2. Fetching Outputs from Another Terraform Workspace/Module
 
 Example:
 A network is created in one module and you need its details in another module — data sources can help pull that information.
 
----
-
-### 3. Getting Dynamic Values from Cloud Providers
+#### 3. Getting Dynamic Values from Cloud Providers
 
 Example:
 Get the **latest Amazon Linux AMI** ID in a given region.
