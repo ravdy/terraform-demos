@@ -140,7 +140,29 @@ resource "aws_instance" "web" {
   }
 }
 ```
+## Realtime Use cases
+1. Fetches existing VPC peering connections  
+```sh
+data "aws_vpc_peering_connections" "pending_acceptance" {
 
+  filter {
+    name   = "requester-vpc-info.owner-id"
+    values = var.requester_owner_ids
+  }
+}
+```
+2. Fetches existing Amazon EKS cluster from AWS 
+```sh
+data "aws_eks_cluster" "cluster" {
+  name = module.eks.cluster_name
+}
+```
+3. Fetches existing AWS Secret 
+```sh
+data "aws_secretsmanager_secret_version" "datadog_api_key" {
+  secret_id = "eksdatadogkey"
+}
+``
 ---
 
 ## 🧠 Summary
