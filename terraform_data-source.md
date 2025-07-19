@@ -162,7 +162,7 @@ data "aws_eks_cluster" "cluster" {
 data "aws_secretsmanager_secret_version" "datadog_api_key" {
   secret_id = "eksdatadogkey"
 }
-``
+```
 ---
 
 ## 🧠 Summary
